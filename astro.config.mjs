@@ -8,6 +8,8 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://react-tokyo-fes-2026.yamanoku.net',
+
   integrations: [react()],
 
   vite: {
