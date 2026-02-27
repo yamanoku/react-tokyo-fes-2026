@@ -17,3 +17,9 @@ pnpm-debug.log*
 
 # Claude Code local Logs
 .log/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
