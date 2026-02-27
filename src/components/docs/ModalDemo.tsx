@@ -109,9 +109,7 @@ const ModalDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>
-          アクセシビリティのポイント
-        </h2>
+        <h2>アクセシビリティのポイント</h2>
         <ul>
           <li>
             ネイティブ <code>&lt;dialog&gt;</code> 要素 +{' '}

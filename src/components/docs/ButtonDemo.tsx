@@ -61,13 +61,12 @@ const ButtonDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>
-          実装時のチェックポイント
-        </h2>
+        <h2>実装時のチェックポイント</h2>
         <ul>
           <li>
-            ネイティブ <code>disabled</code> 属性でフォーカス不可・操作不可を表現
-            （スクリーンリーダーに disabled 状態を暗黙的に伝達）
+            ネイティブ <code>disabled</code>{' '}
+            属性でフォーカス不可・操作不可を表現 （スクリーンリーダーに disabled
+            状態を暗黙的に伝達）
           </li>
           <li>
             ローディング時は

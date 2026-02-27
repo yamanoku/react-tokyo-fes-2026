@@ -2,10 +2,7 @@
   "main": "dist/_worker.js/index.js",
   "name": "react-tokyo-fes-2026",
   "compatibility_date": "2025-09-27",
-  "compatibility_flags": [
-    "global_fetch_strictly_public",
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["global_fetch_strictly_public", "nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
     "directory": "dist"

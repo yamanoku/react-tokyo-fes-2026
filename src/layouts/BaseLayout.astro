@@ -9,7 +9,11 @@ interface Props {
   isTopPage?: boolean;
 }
 
-const { title, description = 'ReactでアクセシブルなUIを実装参考となるコンポーネント集', isTopPage = false } = Astro.props;
+const {
+  title,
+  description = 'ReactでアクセシブルなUIを実装参考となるコンポーネント集',
+  isTopPage = false,
+} = Astro.props;
 
 const siteName = 'Accessible React UI';
 const pageTitle = isTopPage ? siteName : `${title} | ${siteName}`;

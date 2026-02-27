@@ -8,7 +8,10 @@ const wcagSlides: CarouselSlide[] = [
     content: (
       <div>
         <h3>知覚可能（Perceivable）</h3>
-        <p>情報と UI コンポーネントは、ユーザーが知覚できる方法で提示されなければなりません。</p>
+        <p>
+          情報と UI
+          コンポーネントは、ユーザーが知覚できる方法で提示されなければなりません。
+        </p>
         <ul>
           <li>非テキストコンテンツへの代替テキストの提供</li>
           <li>テキストと背景の十分なコントラスト比（4.5:1 以上）</li>
@@ -40,7 +43,9 @@ const wcagSlides: CarouselSlide[] = [
         <h3>理解可能（Understandable）</h3>
         <p>情報と UI の操作は理解可能でなければなりません。</p>
         <ul>
-          <li>ページの言語を <code>lang</code> 属性で明示</li>
+          <li>
+            ページの言語を <code>lang</code> 属性で明示
+          </li>
           <li>エラーの特定と修正方法の提案</li>
           <li>一貫したナビゲーションとコンポーネントの配置</li>
         </ul>
@@ -53,7 +58,9 @@ const wcagSlides: CarouselSlide[] = [
     content: (
       <div>
         <h3>堅牢（Robust）</h3>
-        <p>コンテンツは支援技術を含むさまざまなユーザーエージェントが解釈できるよう堅牢でなければなりません。</p>
+        <p>
+          コンテンツは支援技術を含むさまざまなユーザーエージェントが解釈できるよう堅牢でなければなりません。
+        </p>
         <ul>
           <li>有効な HTML マークアップの使用</li>
           <li>ARIA ロールと属性の適切な実装</li>
@@ -89,18 +96,16 @@ const CarouselDemo = () => {
             <code>aria-live="polite"</code> + <code>aria-atomic="true"</code>{' '}
             でスライド切り替え時にスクリーンリーダーへ通知（WCAG 4.1.3）
           </li>
+          <li>自動再生なし（WCAG 2.2.2）・ドラッグ操作なし（WCAG 2.5.7）</li>
           <li>
-            自動再生なし（WCAG 2.2.2）・ドラッグ操作なし（WCAG 2.5.7）
+            前後ボタンのタッチターゲット最小 44×44px、インジケーター最小
+            24×24px（WCAG 2.5.8）
           </li>
           <li>
-            前後ボタンのタッチターゲット最小 44×44px、インジケーター最小 24×24px（WCAG 2.5.8）
+            <code>hidden</code>{' '}
+            属性で非表示スライドをアクセシビリティツリーから除外
           </li>
-          <li>
-            <code>hidden</code> 属性で非表示スライドをアクセシビリティツリーから除外
-          </li>
-          <li>
-            スライド数は最大6枚を推奨（デジタル庁 DADS ガイドライン）
-          </li>
+          <li>スライド数は最大6枚を推奨（デジタル庁 DADS ガイドライン）</li>
         </ul>
       </section>
     </div>

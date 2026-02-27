@@ -58,7 +58,11 @@ const MenuDemo = () => {
         title="基本的なメニュー"
         description="クリックまたはEnter/Space/矢印キーで開きます"
       >
-        <Menu trigger="メニュー" items={basicItems} ariaLabel="ユーザーメニュー" />
+        <Menu
+          trigger="メニュー"
+          items={basicItems}
+          ariaLabel="ユーザーメニュー"
+        />
       </ComponentDemo>
 
       <ComponentDemo
@@ -84,20 +88,16 @@ const MenuDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>
-          実装時のチェックポイント
-        </h2>
+        <h2>実装時のチェックポイント</h2>
         <ul>
           <li>
             トリガーに
-            <code>aria-haspopup="menu"</code>
-            と<code>aria-expanded</code>
+            <code>aria-haspopup="menu"</code>と<code>aria-expanded</code>
             を設定
           </li>
           <li>
             メニューに
-            <code>role="menu"</code>、
-            項目に
+            <code>role="menu"</code>、 項目に
             <code>role="menuitem"</code>
           </li>
           <li>

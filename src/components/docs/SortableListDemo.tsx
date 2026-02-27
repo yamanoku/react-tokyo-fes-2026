@@ -32,13 +32,13 @@ const SortableListDemo = () => {
             aria-label="並び替え後の順序"
             className="mt-4 p-3 rounded-md border border-component-block bg-accent/5 text-xs font-mono space-y-0.5"
           >
-            <p className="text-gray-500 dark:text-gray-400 mb-1">最後に確定した順序:</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-1">
+              最後に確定した順序:
+            </p>
             <ol className="pl-8">
-            {lastOrder.map((label, i) => (
-              <li key={label}>
-                {label}
-              </li>
-            ))}
+              {lastOrder.map((label, i) => (
+                <li key={label}>{label}</li>
+              ))}
             </ol>
           </div>
         )}
@@ -48,11 +48,13 @@ const SortableListDemo = () => {
         <h2>アクセシビリティのポイント</h2>
         <ul>
           <li>
-            <code>role="application"</code> をドラッグハンドルに動的適用（キーボードドラッグ中のみ）。
+            <code>role="application"</code>{' '}
+            をドラッグハンドルに動的適用（キーボードドラッグ中のみ）。
             スクリーンリーダーが矢印キーを横取りするのを防ぎ、上下移動操作を可能にする
           </li>
           <li>
-            <code>aria-live="assertive"</code> でドロップ完了・移動中の位置をスクリーンリーダーに即時通知。
+            <code>aria-live="assertive"</code>{' '}
+            でドロップ完了・移動中の位置をスクリーンリーダーに即時通知。
             高速移動時のアナウンス乱発を防ぐため 100ms debounce を適用
           </li>
           <li>
@@ -69,7 +71,8 @@ const SortableListDemo = () => {
             ユーザーが操作を継続できるようにする
           </li>
           <li>
-            順序が意味を持つリストには <code>{'<ol>'}</code>（順序付きリスト）を使用。
+            順序が意味を持つリストには <code>{'<ol>'}</code>
+            （順序付きリスト）を使用。
             スクリーンリーダーが「X項目中Y番目」と読み上げる
           </li>
           <li>

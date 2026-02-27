@@ -82,7 +82,11 @@ function reorderList<T>(list: T[], fromIdx: number, toIdx: number): T[] {
 
 // ─── SortableList ─────────────────────────────────────────────────────────────
 
-export function SortableList({ items: initialItems, onReorder, label }: SortableListProps) {
+export function SortableList({
+  items: initialItems,
+  onReorder,
+  label,
+}: SortableListProps) {
   const [items, setItems] = useState<SortableItem[]>(initialItems);
 
   // マウスドラッグ状態
@@ -99,11 +103,14 @@ export function SortableList({ items: initialItems, onReorder, label }: Sortable
 
   // ─── マウスドラッグ ──────────────────────────────────────────────────────────
 
-  const handleDragStart = useCallback((e: DragEvent<HTMLLIElement>, id: string) => {
-    setDraggingId(id);
-    e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/plain', id);
-  }, []);
+  const handleDragStart = useCallback(
+    (e: DragEvent<HTMLLIElement>, id: string) => {
+      setDraggingId(id);
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', id);
+    },
+    [],
+  );
 
   const handleDragOver = useCallback(
     (e: DragEvent<HTMLLIElement>, id: string) => {
@@ -252,17 +259,22 @@ export function SortableList({ items: initialItems, onReorder, label }: Sortable
        * [GitHub blog 参照] aria-live="assertive" で古いアナウンスを中断し最新の位置を通知する。
        * sr-only で視覚的には非表示。
        */}
-      <div role="status" aria-live="assertive" aria-atomic="true" className="sr-only">
+      <div
+        role="status"
+        aria-live="assertive"
+        aria-atomic="true"
+        className="sr-only"
+      >
         {message}
       </div>
 
-      <ol
-        aria-label={label}
-        className="space-y-2 pl-0"
-      >
+      <ol aria-label={label} className="space-y-2 pl-0">
         {items.map((item, index) => {
           const isMouseDragging = draggingId === item.id;
-          const isDragTarget = dragOverId === item.id && draggingId !== null && draggingId !== item.id;
+          const isDragTarget =
+            dragOverId === item.id &&
+            draggingId !== null &&
+            draggingId !== item.id;
           const isKeyDragging = keyDragId === item.id;
           // キーボードドラッグ中は他のアイテムをマウスでドラッグできないようにする
           const isDraggable = !keyDragId && !isKeyDragging;
@@ -280,8 +292,12 @@ export function SortableList({ items: initialItems, onReorder, label }: Sortable
                 'flex items-center gap-3 px-4 py-3 rounded-lg border',
                 'transition-all duration-150 select-none',
                 isMouseDragging ? 'opacity-40 scale-[0.98]' : '',
-                isDragTarget ? 'border-accent bg-accent/8 scale-[1.01]' : 'border-component-block',
-                isKeyDragging ? 'ring-2 ring-accent bg-accent/10 border-accent' : '',
+                isDragTarget
+                  ? 'border-accent bg-accent/8 scale-[1.01]'
+                  : 'border-component-block',
+                isKeyDragging
+                  ? 'ring-2 ring-accent bg-accent/10 border-accent'
+                  : '',
               ]
                 .filter(Boolean)
                 .join(' ')}
@@ -335,7 +351,9 @@ export function SortableList({ items: initialItems, onReorder, label }: Sortable
                 aria-hidden="true"
                 className={[
                   'text-xs font-mono w-5 flex-shrink-0 text-center tabular-nums',
-                  isKeyDragging ? 'text-accent font-bold' : 'text-gray-400 dark:text-gray-500',
+                  isKeyDragging
+                    ? 'text-accent font-bold'
+                    : 'text-gray-400 dark:text-gray-500',
                 ]
                   .filter(Boolean)
                   .join(' ')}
@@ -352,4 +370,3 @@ export function SortableList({ items: initialItems, onReorder, label }: Sortable
     </div>
   );
 }
-

@@ -107,8 +107,9 @@ const TreeViewDemo = () => {
         <h2>アクセシビリティのポイント</h2>
         <ul>
           <li>
-            ルートに <code>role="tree"</code>、各項目に <code>role="treeitem"</code>、
-            子グループに <code>role="group"</code>
+            ルートに <code>role="tree"</code>、各項目に{' '}
+            <code>role="treeitem"</code>、 子グループに{' '}
+            <code>role="group"</code>
           </li>
           <li>
             <code>aria-expanded</code> で展開・折りたたみ状態を明示
@@ -118,19 +119,25 @@ const TreeViewDemo = () => {
             <code>aria-selected</code> で選択状態を明示
           </li>
           <li>
-            <code>aria-level</code>・<code>aria-setsize</code>・<code>aria-posinset</code>{' '}
+            <code>aria-level</code>・<code>aria-setsize</code>・
+            <code>aria-posinset</code>{' '}
             で階層の深さ・兄弟数・位置をスクリーンリーダーに伝達
           </li>
           <li>
-            Roving tabindex: フォーカスされた項目のみ <code>tabindex="0"</code>、
-            その他は <code>tabindex="-1"</code> でツリー全体を単一のタブ停止点にする
+            Roving tabindex: フォーカスされた項目のみ <code>tabindex="0"</code>
+            、 その他は <code>tabindex="-1"</code>{' '}
+            でツリー全体を単一のタブ停止点にする
           </li>
           <li>
             キーボード操作（APG 準拠）:
             <ul>
               <li>↓ / ↑: 前後の可視ノードへ移動</li>
-              <li>→: 閉じているノードを展開 / 開いているノードの最初の子へ移動</li>
-              <li>←: 開いているノードを折りたたむ / 閉じているノードの親へ移動</li>
+              <li>
+                →: 閉じているノードを展開 / 開いているノードの最初の子へ移動
+              </li>
+              <li>
+                ←: 開いているノードを折りたたむ / 閉じているノードの親へ移動
+              </li>
               <li>Home / End: 最初・最後の可視ノードへジャンプ</li>
               <li>Enter: 選択 + 子があれば展開/折りたたみトグル</li>
               <li>Space: 選択のみ</li>

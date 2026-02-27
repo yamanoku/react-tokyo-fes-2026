@@ -10,7 +10,8 @@ const TabsDemo = () => {
         <div>
           <h3>製品概要</h3>
           <p>
-            この製品は、アクセシビリティを重視した設計になっています。<br />
+            この製品は、アクセシビリティを重視した設計になっています。
+            <br />
             すべてのユーザーが快適に利用できるよう、様々な配慮がなされています。
           </p>
         </div>
@@ -62,13 +63,10 @@ const TabsDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>
-          実装時のチェックポイント
-        </h2>
+        <h2>実装時のチェックポイント</h2>
         <ul>
           <li>
-            <code>role="tablist"</code>、
-            <code>role="tab"</code>、
+            <code>role="tablist"</code>、<code>role="tab"</code>、
             <code>role="tabpanel"</code>
             を適切に設定
           </li>
@@ -77,8 +75,7 @@ const TabsDemo = () => {
             で選択状態を明示
           </li>
           <li>
-            <code>aria-controls</code>と
-            <code>aria-labelledby</code>
+            <code>aria-controls</code>と<code>aria-labelledby</code>
             でタブとパネルを関連付け
           </li>
           <li>
@@ -91,5 +88,5 @@ const TabsDemo = () => {
       </section>
     </div>
   );
-}
+};
 export default TabsDemo;

@@ -28,7 +28,11 @@ export function Carousel({ slides, label }: CarouselProps) {
   return (
     // aria-roledescription="carousel" でカルーセル領域を明示
     // aria-label でカルーセルの目的をスクリーンリーダーに伝達
-    <section aria-roledescription="carousel" aria-label={label} className="w-full">
+    <section
+      aria-roledescription="carousel"
+      aria-label={label}
+      className="w-full"
+    >
       {/*
         aria-live="polite" + aria-atomic="true":
         スライド切り替え時に「スライドラベル、N / M」を通知（WCAG 4.1.3）
@@ -79,7 +83,12 @@ export function Carousel({ slides, label }: CarouselProps) {
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
 
@@ -131,11 +140,15 @@ export function Carousel({ slides, label }: CarouselProps) {
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
       </div>
     </section>
   );
 }
-

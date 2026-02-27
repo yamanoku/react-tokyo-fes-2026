@@ -1,12 +1,12 @@
 @layer theme, base, components, utilities;
 
 @import "yama-normalize/yama-normalize.css" layer(theme);
-@import 'tailwindcss/theme.css' layer(theme);
+@import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @theme {
-  --font-sans: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
   --color-accent: var(--y-identity-color);
   --color-link: var(--y-link-color);
   --color-component-block: var(--y-black-base);
@@ -25,14 +25,14 @@
     --color-menu-border: var(--y-white-medium);
   }
 }
-  
+
 /*
   html フォント設定の上書き（非レイヤー CSS: 後勝ち）
   font-size: 125% は yama-normalize を尊重して上書きしない
   -webkit-font-smoothing は yama-normalize が設定済み
 */
 html {
-  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", sans-serif;
   font-feature-settings: "palt";
   -moz-osx-font-smoothing: grayscale;
 }

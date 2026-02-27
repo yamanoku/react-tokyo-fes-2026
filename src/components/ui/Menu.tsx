@@ -22,7 +22,12 @@ interface MenuProps {
   ariaLabel?: string;
 }
 
-export function Menu({ trigger, triggerLabel, items, ariaLabel = 'メニュー' }: MenuProps) {
+export function Menu({
+  trigger,
+  triggerLabel,
+  items,
+  ariaLabel = 'メニュー',
+}: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -171,4 +176,3 @@ export function Menu({ trigger, triggerLabel, items, ariaLabel = 'メニュー' 
     </div>
   );
 }
-

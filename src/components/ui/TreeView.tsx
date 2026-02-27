@@ -22,7 +22,10 @@ interface TreeViewProps {
 // ─── ヘルパー関数 ─────────────────────────────────────────────────────────────
 
 /** 現在表示されているノードの ID を DOM 順で返す（折りたたまれた子孫は含まない） */
-function getVisibleIds(nodes: TreeNodeData[], expandedIds: Set<string>): string[] {
+function getVisibleIds(
+  nodes: TreeNodeData[],
+  expandedIds: Set<string>,
+): string[] {
   const result: string[] = [];
   function traverse(list: TreeNodeData[]) {
     for (const node of list) {
@@ -111,9 +114,7 @@ function TreeItemComponent({
         className={[
           'flex items-center gap-1 px-2 py-1 rounded-md cursor-pointer select-none text-sm',
           'hover:bg-gray-100 dark:hover:bg-gray-800',
-          isFocused && isTreeFocused
-            ? 'ring-2 ring-accent ring-offset-1'
-            : '',
+          isFocused && isTreeFocused ? 'ring-2 ring-accent ring-offset-1' : '',
           isSelected ? 'bg-accent/10 text-accent font-medium' : '',
         ]
           .filter(Boolean)
@@ -272,7 +273,8 @@ export function TreeView({ nodes, label }: TreeViewProps) {
         }
         case 'End': {
           event.preventDefault();
-          if (visibleIds.length > 0) moveFocus(visibleIds[visibleIds.length - 1]);
+          if (visibleIds.length > 0)
+            moveFocus(visibleIds[visibleIds.length - 1]);
           break;
         }
         case 'Enter': {
@@ -346,4 +348,3 @@ export function TreeView({ nodes, label }: TreeViewProps) {
     </ul>
   );
 }
-

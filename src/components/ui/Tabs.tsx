@@ -1,4 +1,10 @@
-import { useState, useRef, useId, type KeyboardEvent, type ReactNode } from 'react';
+import {
+  useState,
+  useRef,
+  useId,
+  type KeyboardEvent,
+  type ReactNode,
+} from 'react';
 
 interface Tab {
   id: string;
@@ -56,10 +62,7 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
 
   return (
     <div>
-      <div
-        role="tablist"
-        aria-label={ariaLabel}
-      >
+      <div role="tablist" aria-label={ariaLabel}>
         {tabs.map((tab) => {
           const isActive = tab.id === activeTabId;
           return (
@@ -79,11 +82,7 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
               className={`
                 px-4 py-2 text-sm font-medium border-b-2 -mb-px
                 transition-colors duration-200
-                ${
-                  isActive
-                    ? 'border-accent'
-                    : 'border-transparent'
-                }
+                ${isActive ? 'border-accent' : 'border-transparent'}
               `}
             >
               {tab.label}
