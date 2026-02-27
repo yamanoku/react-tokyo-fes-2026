@@ -13,5 +13,11 @@
   "observability": {
     "enabled": true
   },
+  "routes": [
+    {
+      "pattern": "react-tokyo-fes-2026.yamanoku.net",
+      "custom_domain": true
+    }
+  ],
   "$schema": "node_modules/wrangler/config-schema.json"
 }
