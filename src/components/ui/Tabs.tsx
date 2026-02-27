@@ -1,4 +1,4 @@
-import { useState, useRef, type KeyboardEvent, type ReactNode } from 'react';
+import { useState, useRef, useId, type KeyboardEvent, type ReactNode } from 'react';
 
 interface Tab {
   id: string;
@@ -15,6 +15,10 @@ interface TabsProps {
 export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
   const [activeTabId, setActiveTabId] = useState(defaultTabId || tabs[0]?.id);
   const tabRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
+  const uid = useId();
+
+  const tabId = (id: string) => `${uid}-tab-${id}`;
+  const panelId = (id: string) => `${uid}-tabpanel-${id}`;
 
   const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     const currentIndex = tabs.findIndex((tab) => tab.id === activeTabId);
@@ -66,9 +70,9 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
                 else tabRefs.current.delete(tab.id);
               }}
               role="tab"
-              id={`tab-${tab.id}`}
+              id={tabId(tab.id)}
               aria-selected={isActive}
-              aria-controls={`tabpanel-${tab.id}`}
+              aria-controls={panelId(tab.id)}
               tabIndex={isActive ? 0 : -1}
               onClick={() => setActiveTabId(tab.id)}
               onKeyDown={handleKeyDown}
@@ -91,8 +95,8 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
         <div
           key={activeTab.id}
           role="tabpanel"
-          id={`tabpanel-${activeTab.id}`}
-          aria-labelledby={`tab-${activeTab.id}`}
+          id={panelId(activeTab.id)}
+          aria-labelledby={tabId(activeTab.id)}
           tabIndex={0}
           className="p-4 mt-px border-t"
         >
@@ -102,4 +106,3 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
     </div>
   );
 }
-
