@@ -9,9 +9,13 @@ const MenuDemo = () => {
   ];
 
   const navItems = [
-    { id: 'home', label: 'ホーム', href: '/' },
-    { id: 'components', label: 'コンポーネント', href: '/components/' },
-    { id: 'guidelines', label: 'ガイドライン', href: '/guidelines/' },
+    { id: 'button', label: 'Button', href: '/components/button' },
+    { id: 'modal', label: 'Modal Dialog', href: '/components/modal' },
+    { id: 'tabs', label: 'Tabs', href: '/components/tabs' },
+    { id: 'menu', label: 'Menu', href: '/components/menu' },
+    { id: 'carousel', label: 'Carousel', href: '/components/carousel' },
+    { id: 'treeview', label: 'Tree View', href: '/components/treeview' },
+    { id: 'sortable', label: 'Sortable List', href: '/components/sortable' },
   ];
 
   const iconItems = [
