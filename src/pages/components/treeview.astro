@@ -5,10 +5,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Tree View" description="アクセシブルなツリービューコンポーネントの実装例">
   <h1 class="text-4xl mb-4">Tree View</h1>
-  <p class="mb-12 leading-relaxed text-sm">
+  <p class="mb-4 leading-relaxed text-sm">
     階層構造のデータをツリー形式で表示するコンポーネント。
-    <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treeview/" target="_blank">W3C ARIA APG の Tree Viewパターン</a>
+    <a href="https://www.w3.org/WAI/ARIA/apg/patterns/treeview/" target="_blank" rel="noopener noreferrer">W3C ARIA APG の Tree Viewパターン</a>
     に準拠したキーボード操作・スクリーンリーダー対応を実装しています。
   </p>
+  <a
+    href="https://github.com/yamanoku/react-tokyo-fes-2026/blob/main/src/components/ui/TreeView.tsx"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-sm mb-12"
+  >
+    TreeView.tsx
+  </a>
   <TreeViewDemo client:load />
 </BaseLayout>

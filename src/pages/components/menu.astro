@@ -5,9 +5,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Menu" description="アクセシブルなドロップダウンメニューの実装例">
   <h1 class="text-4xl mb-4">Menu</h1>
-  <p class="mb-12 leading-relaxed text-sm">
+  <p class="mb-4 leading-relaxed text-sm">
     キーボード操作に完全対応したドロップダウンメニュー。
     矢印キーで項目間を移動できます。
   </p>
+  <a
+    href="https://github.com/yamanoku/react-tokyo-fes-2026/blob/main/src/components/ui/Menu.tsx"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-sm mb-12"
+  >
+    Menu.tsx
+  </a>
   <MenuDemo client:load />
 </BaseLayout>

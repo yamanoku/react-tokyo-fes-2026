@@ -5,9 +5,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Button" description="アクセシブルなボタンコンポーネントの実装例">
   <h1 class="text-4xl mb-4">Button</h1>
-  <p class="mb-12 leading-relaxed text-sm">
+  <p class="mb-4 leading-relaxed text-sm">
     アクセシブルなボタンコンポーネント。disabled状態、ローディング状態、
     アイコン付きなど様々なバリエーションに対応しています。
   </p>
+  <a
+    href="https://github.com/yamanoku/react-tokyo-fes-2026/blob/main/src/components/ui/Button.tsx"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-sm mb-12"
+  >
+    Button.tsx
+  </a>
   <ButtonDemo client:load />
 </BaseLayout>

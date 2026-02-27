@@ -5,9 +5,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Sortable List" description="アクセシブルなソートリストコンポーネントの実装例">
   <h1 class="text-4xl mb-4">Sortable List</h1>
-  <p class="mb-12 leading-relaxed text-sm">
+  <p class="mb-4 leading-relaxed text-sm">
     ドラッグアンドドロップで並び替えができるリストコンポーネント。
     マウス操作に加え、キーボードでも完全に操作できるアクセシブルな実装です。
   </p>
+  <a
+    href="https://github.com/yamanoku/react-tokyo-fes-2026/blob/main/src/components/ui/SortableList.tsx"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-sm mb-12"
+  >
+    SortableList.tsx
+  </a>
   <SortableListDemo client:load />
 </BaseLayout>

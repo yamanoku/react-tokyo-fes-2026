@@ -5,10 +5,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Tabs" description="アクセシブルなタブコンポーネントの実装例">
   <h1 class="text-4xl mb-4">Tabs</h1>
-  <p class="mb-12 leading-relaxed text-sm">
+  <p class="mb-4 leading-relaxed text-sm">
     キーボードナビゲーションに対応したタブコンポーネント。
     矢印キーでタブ間を移動できます。
   </p>
-
+  <a
+    href="https://github.com/yamanoku/react-tokyo-fes-2026/blob/main/src/components/ui/Tabs.tsx"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 text-sm mb-12"
+  >
+    Tabs.tsx
+  </a>
   <TabsDemo client:load />
 </BaseLayout>
