@@ -6,7 +6,7 @@
 
 Reactでアクセシブルなユーザーインターフェースを構築するためのコンポーネント集。
 
-
+![Accessible React UIサイトのヒーローイメージ](./public/image.png)
 
 ## 技術スタック
 
