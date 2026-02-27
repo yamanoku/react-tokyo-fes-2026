@@ -1,0 +1,19 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+pnpm-debug.log*
+
+# environment variables
+.env
+
+# macOS-specific files
+.DS_Store
+
+# Claude Code local Logs
+.log/

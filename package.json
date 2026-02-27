@@ -1,0 +1,23 @@
+{
+  "name": "accessible-react-ui",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "ReactでアクセシブルなUIを実装するためのガイドとコンポーネント集",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^5.17.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.1.18",
+    "yama-normalize": "2.4.0"
+  }
+}

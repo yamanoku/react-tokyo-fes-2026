@@ -1,0 +1,111 @@
+@layer theme, base, components, utilities;
+
+@import "yama-normalize/yama-normalize.css" layer(theme);
+@import 'tailwindcss/theme.css' layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --font-sans: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --color-accent: var(--y-identity-color);
+  --color-link: var(--y-link-color);
+  --color-component-block: var(--y-black-base);
+  --color-list-block: var(--y-black-base);
+  --color-menu-block: var(--y-body-background);
+  --color-menu-text: var(--y-body-text-color);
+  --color-menu-border: var(--y-black-base);
+  --text-hero: clamp(2.5rem, 6.7vw + 1.15rem, 6rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: var(--y-purple-medium);
+    --color-component-block: var(--y-white-low);
+    --color-list-block: var(--y-white-low);
+    --color-menu-border: var(--y-white-medium);
+  }
+}
+  
+/*
+  html フォント設定の上書き（非レイヤー CSS: 後勝ち）
+  font-size: 125% は yama-normalize を尊重して上書きしない
+  -webkit-font-smoothing は yama-normalize が設定済み
+*/
+html {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  font-feature-settings: "palt";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  yama-normalize は :where(header, main, footer) に
+  max-width: 45rem と padding-inline を付与する
+  プロジェクトはフルワイド + 内部コンテナでレイアウトするためリセット
+*/
+:where(header, main, footer) {
+  padding-inline: 0;
+  box-sizing: border-box;
+  margin-inline: 0;
+}
+
+/*
+  yama-normalize の section { margin-block: 1lh } をリセット
+  各ページで Tailwind クラスによりスペーシングを制御する
+*/
+section {
+  margin-block: 0;
+}
+
+/*
+  フォーカス スタイルの調整
+  outline-color は --y-outline-color 経由でアクセントカラーに設定済み
+  outline-width / outline-style は yama-normalize を継承
+*/
+:focus-visible {
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+button {
+  appearance: none;
+  border-style: solid;
+}
+
+@layer base {
+  /* スクリーンリーダー専用クラス */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .sr-only:focus,
+  .not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* 減弱モーションの設定を尊重 */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

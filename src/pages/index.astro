@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const components = [
+  {
+    name: 'Button',
+    description: 'アクセシブルなボタンコンポーネント。disabled状態やローディング状態に対応。',
+    href: '/components/button/',
+  },
+  {
+    name: 'Modal Dialog',
+    description: 'フォーカストラップとキーボード操作に対応したモーダルダイアログ。',
+    href: '/components/modal/',
+  },
+  {
+    name: 'Tabs',
+    description: 'キーボードナビゲーションに対応したタブコンポーネント。',
+    href: '/components/tabs/',
+  },
+  {
+    name: 'Drop Down Menu',
+    description: 'ドロップダウンメニュー。キーボード操作に完全対応。',
+    href: '/components/menu/',
+  },
+  {
+    name: 'Carousel',
+    description: '自動再生なし・スクリーンリーダー通知付きのカルーセルコンポーネント。',
+    href: '/components/carousel/',
+  },
+  {
+    name: 'Tree View',
+    description: '階層構造を表示するツリービュー。APG treeview パターン準拠のキーボード操作に対応。',
+    href: '/components/treeview/',
+  },
+  {
+    name: 'Sortable List',
+    description: 'ドラッグアンドドロップで並び替えができるリスト。マウス・キーボード両対応のアクセシブルな実装。',
+    href: '/components/sortable/',
+  },
+];
+---
+
+<BaseLayout title="ホーム" isTopPage={true}>
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Hero -->
+    <section aria-labelledby="hero-heading" class="pt-20 pb-16 md:pt-28 md:pb-20">
+      <h1 id="hero-heading" class="my-0 text-hero leading-none mb-8">
+        Accessible<br />React UI
+      </h1>
+      <div class="w-24 h-px bg-accent mb-8"></div>
+      <p class="text-base md:text-lg max-w-lg leading-relaxed">
+        Reactでアクセシブルなユーザーインターフェースを<br class="hidden sm:block" />
+        構築するためのコンポーネント集
+      </p>
+    </section>
+
+    <!-- Components -->
+    <section aria-labelledby="components-heading" class="pb-24">
+      <h2 id="components-heading">コンポーネント一覧</h2>
+      <div class="border-t">
+        {components.map((component, i) => (
+          <a
+            href={component.href}
+            class="group text-list-block flex items-center gap-6 duration-200 no-underline border-b"
+          >
+            <span class="font-mono text-xs w-6 flex-shrink-0 tracking-[0.15em] select-none">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xl duration-200 group-hover:underline">
+                {component.name}
+              </h3>
+              <p class="text-sm leading-relaxed">{component.description}</p>
+            </div>
+            <svg
+              class="w-4 h-4 flex-shrink-0 transition-all duration-200 group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

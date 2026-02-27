@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SortableListDemo from '../../components/docs/SortableListDemo';
+---
+
+<BaseLayout title="Sortable List" description="アクセシブルなソートリストコンポーネントの実装例">
+  <h1 class="text-4xl mb-4">Sortable List</h1>
+  <p class="mb-12 leading-relaxed text-sm">
+    ドラッグアンドドロップで並び替えができるリストコンポーネント。
+    マウス操作に加え、キーボードでも完全に操作できるアクセシブルな実装です。
+  </p>
+  <SortableListDemo client:load />
+</BaseLayout>

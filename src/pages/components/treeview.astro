@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TreeViewDemo from '../../components/docs/TreeViewDemo';
+---
+
+<BaseLayout title="Tree View" description="アクセシブルなツリービューコンポーネントの実装例">
+  <h1 class="text-4xl mb-4">Tree View</h1>
+  <p class="mb-12 leading-relaxed text-sm">
+    階層構造のデータをツリー形式で表示するコンポーネント。
+    W3C ARIA APG の treeview パターンに準拠したキーボード操作・スクリーンリーダー対応を実装しています。
+  </p>
+  <TreeViewDemo client:load />
+</BaseLayout>

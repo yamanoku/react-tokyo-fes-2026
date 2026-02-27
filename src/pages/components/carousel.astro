@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CarouselDemo from '../../components/docs/CarouselDemo';
+---
+
+<BaseLayout title="Carousel" description="アクセシブルなカルーセルコンポーネントの実装例">
+  <h1 class="text-4xl mb-4">Carousel</h1>
+  <p class="mb-12 leading-relaxed text-sm">
+    スライドコンテンツを順番に表示するカルーセルコンポーネント。
+    自動再生なし・キーボード操作対応・スクリーンリーダーへのスライド変更通知に対応しています。
+  </p>
+  <CarouselDemo client:load />
+</BaseLayout>

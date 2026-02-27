@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ModalDemo from '../../components/docs/ModalDemo';
+---
+
+<BaseLayout title="Modal" description="アクセシブルなモーダルダイアログの実装例">
+  <h1 class="text-4xl mb-4">Modal</h1>
+  <p class="mb-12 leading-relaxed text-sm">
+    フォーカストラップ、キーボード操作、フォーカス復帰に対応したアクセシブルなモーダルダイアログコンポーネント。
+  </p>
+  <ModalDemo client:load />
+</BaseLayout>

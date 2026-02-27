@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TabsDemo from '../../components/docs/TabsDemo';
+---
+
+<BaseLayout title="Tabs" description="アクセシブルなタブコンポーネントの実装例">
+  <h1 class="text-4xl mb-4">Tabs</h1>
+  <p class="mb-12 leading-relaxed text-sm">
+    キーボードナビゲーションに対応したタブコンポーネント。
+    矢印キーでタブ間を移動できます。
+  </p>
+
+  <TabsDemo client:load />
+</BaseLayout>

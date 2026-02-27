@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ButtonDemo from '../../components/docs/ButtonDemo';
+---
+
+<BaseLayout title="Button" description="アクセシブルなボタンコンポーネントの実装例">
+  <h1 class="text-4xl mb-4">Button</h1>
+  <p class="mb-12 leading-relaxed text-sm">
+    アクセシブルなボタンコンポーネント。disabled状態、ローディング状態、
+    アイコン付きなど様々なバリエーションに対応しています。
+  </p>
+  <ButtonDemo client:load />
+</BaseLayout>
