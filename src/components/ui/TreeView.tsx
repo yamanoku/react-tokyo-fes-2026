@@ -97,7 +97,6 @@ function TreeItemComponent({
       aria-posinset={posInSet}
       tabIndex={isFocused ? 0 : -1}
       onKeyDown={(e) => {
-        // [Bug 3 修正] stopPropagation で親 li への keydown 二重発火を防ぐ
         e.stopPropagation();
         onKeyDown(e, node);
       }}
@@ -197,11 +196,9 @@ export function TreeView({ nodes, label }: TreeViewProps) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [focusedId, setFocusedId] = useState<string>(nodes[0]?.id ?? '');
-  // [Bug 2 修正] ツリーが実際に DOM フォーカスを持っているかを追跡
   const [isTreeFocused, setIsTreeFocused] = useState(false);
   const itemRefs = useRef<Map<string, HTMLLIElement>>(new Map());
   const parentMapRef = useRef(new Map<string, string | null>());
-  // [Bug 1 修正] キーボード操作・クリックによる意図的なフォーカス移動のみ .focus() を呼ぶ
   const shouldFocusProgrammatically = useRef(false);
 
   useEffect(() => {
@@ -209,8 +206,6 @@ export function TreeView({ nodes, label }: TreeViewProps) {
     buildParentMap(nodes, null, parentMapRef.current);
   }, [nodes]);
 
-  // [Bug 1 修正] shouldFocusProgrammatically が true のときだけ DOM フォーカスを移動する。
-  // マウント時は false のままなので自動フォーカスが発生しない。
   useEffect(() => {
     if (focusedId && shouldFocusProgrammatically.current) {
       itemRefs.current.get(focusedId)?.focus();
@@ -324,10 +319,8 @@ export function TreeView({ nodes, label }: TreeViewProps) {
     <ul
       role="tree"
       aria-label={label}
-      className="p-2 rounded-lg border border-component-block font-mono text-sm"
-      // [Bug 2 修正] ツリー内のどの要素にフォーカスがあっても onFocus がバブルしてくる
+      className="m-0 p-2 rounded-lg border border-component-block font-mono text-sm overflow-auto"
       onFocus={() => setIsTreeFocused(true)}
-      // relatedTarget がツリー内の要素でなければツリーからフォーカスが出たと判断
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
           setIsTreeFocused(false);
