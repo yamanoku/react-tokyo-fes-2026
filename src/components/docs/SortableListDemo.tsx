@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SortableList, type SortableItem } from '../ui/SortableList';
+import { type SortableItem, SortableList } from '../ui/SortableList';
 import ComponentDemo from './ComponentDemo';
 
 const initialTasks: SortableItem[] = [
@@ -27,8 +27,7 @@ const SortableListDemo = () => {
         />
 
         {lastOrder.length > 0 && (
-          <div
-            role="status"
+          <output
             aria-label="並び替え後の順序"
             className="mt-4 p-3 rounded-md border border-component-block bg-accent/5 text-xs font-mono space-y-0.5"
           >
@@ -36,11 +35,11 @@ const SortableListDemo = () => {
               最後に確定した順序:
             </p>
             <ol className="pl-8">
-              {lastOrder.map((label, i) => (
+              {lastOrder.map((label) => (
                 <li key={label}>{label}</li>
               ))}
             </ol>
-          </div>
+          </output>
         )}
       </ComponentDemo>
 

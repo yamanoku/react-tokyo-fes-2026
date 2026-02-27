@@ -1,10 +1,10 @@
 import {
-  useState,
-  useRef,
-  useEffect,
-  useCallback,
   type KeyboardEvent,
   type MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 
 export interface TreeNodeData {
@@ -169,12 +169,12 @@ function TreeItemComponent({
       {/* 子ノードグループ */}
       {hasChildren && isExpanded && (
         <ul role="group" className="ml-5 border-l border-component-block pl-1">
-          {node.children!.map((child, index) => (
+          {node.children?.map((child, index) => (
             <TreeItemComponent
               key={child.id}
               node={child}
               level={level + 1}
-              setSize={node.children!.length}
+              setSize={node.children?.length ?? 0}
               posInSet={index + 1}
               expandedIds={expandedIds}
               selectedId={selectedId}

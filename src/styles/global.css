@@ -102,9 +102,13 @@ button {
     *,
     *::before,
     *::after {
+      /* biome-ignore lint/complexity/noImportantStyles: prefers-reduced-motion で他のスタイルを確実に上書きするために !important が必要 */
       animation-duration: 0.01ms !important;
+      /* biome-ignore lint/complexity/noImportantStyles: prefers-reduced-motion で他のスタイルを確実に上書きするために !important が必要 */
       animation-iteration-count: 1 !important;
+      /* biome-ignore lint/complexity/noImportantStyles: prefers-reduced-motion で他のスタイルを確実に上書きするために !important が必要 */
       transition-duration: 0.01ms !important;
+      /* biome-ignore lint/complexity/noImportantStyles: prefers-reduced-motion で他のスタイルを確実に上書きするために !important が必要 */
       scroll-behavior: auto !important;
     }
   }

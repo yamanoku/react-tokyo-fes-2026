@@ -1,10 +1,10 @@
 import {
-  useState,
-  useRef,
+  type DragEvent,
+  type KeyboardEvent,
   useCallback,
   useEffect,
-  type KeyboardEvent,
-  type DragEvent,
+  useRef,
+  useState,
 } from 'react';
 
 export interface SortableItem {
@@ -259,14 +259,9 @@ export function SortableList({
        * [GitHub blog 参照] aria-live="assertive" で古いアナウンスを中断し最新の位置を通知する。
        * sr-only で視覚的には非表示。
        */}
-      <div
-        role="status"
-        aria-live="assertive"
-        aria-atomic="true"
-        className="sr-only"
-      >
+      <output aria-live="assertive" aria-atomic="true" className="sr-only">
         {message}
-      </div>
+      </output>
 
       <ol aria-label={label} className="space-y-2 pl-0">
         {items.map((item, index) => {

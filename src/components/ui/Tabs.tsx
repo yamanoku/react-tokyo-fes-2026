@@ -1,9 +1,9 @@
 import {
-  useState,
-  useRef,
-  useId,
   type KeyboardEvent,
   type ReactNode,
+  useId,
+  useRef,
+  useState,
 } from 'react';
 
 interface Tab {
@@ -67,6 +67,7 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
           const isActive = tab.id === activeTabId;
           return (
             <button
+              type="button"
               key={tab.id}
               ref={(el) => {
                 if (el) tabRefs.current.set(tab.id, el);
@@ -96,6 +97,7 @@ export function Tabs({ tabs, defaultTabId, ariaLabel = 'タブ' }: TabsProps) {
           role="tabpanel"
           id={panelId(activeTab.id)}
           aria-labelledby={tabId(activeTab.id)}
+          // biome-ignore lint/a11y/noNoninteractiveTabindex: APG タブパターンではタブパネルを tabindex=0 でフォーカス可能にする必要がある
           tabIndex={0}
           className="p-4 mt-px border-t"
         >

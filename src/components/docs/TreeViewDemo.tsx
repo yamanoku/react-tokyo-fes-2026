@@ -1,4 +1,4 @@
-import { TreeView, type TreeNodeData } from '../ui/TreeView';
+import { type TreeNodeData, TreeView } from '../ui/TreeView';
 import ComponentDemo from './ComponentDemo';
 
 // JSX を含まない純粋なオブジェクトはモジュールレベルに定義可能

@@ -68,6 +68,7 @@ export function Modal({
   return (
     // open: variant で [open] 属性があるときのみ flex を適用
     // UA スタイルシートの dialog:not([open]) { display: none } を尊重
+    // biome-ignore lint/a11y/useKeyWithClickEvents: キーボードユーザーの閉じる操作は Escape キーによる cancel イベントで処理済み
     <dialog
       ref={dialogRef}
       aria-labelledby={titleId}

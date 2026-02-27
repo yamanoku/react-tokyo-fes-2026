@@ -1,4 +1,4 @@
-import { type ComponentProps, type ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline';
 type ButtonSize = 'sm' | 'md' | 'lg';

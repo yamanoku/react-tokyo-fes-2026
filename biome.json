@@ -16,7 +16,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "a11y": {
+        "recommended": true
+      }
     }
   },
   "javascript": {
@@ -30,6 +33,40 @@
       "tailwindDirectives": true
     }
   },
+  "overrides": [
+    {
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/components/ui/Carousel.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "useSemanticElements": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/components/ui/TreeView.tsx"],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "noNoninteractiveElementToInteractiveRole": "off",
+            "useSemanticElements": "off"
+          }
+        }
+      }
+    }
+  ],
   "assist": {
     "enabled": true,
     "actions": {
