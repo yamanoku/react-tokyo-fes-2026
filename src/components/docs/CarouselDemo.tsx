@@ -82,7 +82,7 @@ const CarouselDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>アクセシビリティのポイント</h2>
+        <h2>実装時のチェックポイント</h2>
         <ul>
           <li>
             <code>aria-roledescription="carousel"</code> でカルーセル領域を明示
@@ -94,18 +94,62 @@ const CarouselDemo = () => {
           </li>
           <li>
             <code>aria-live="polite"</code> + <code>aria-atomic="true"</code>{' '}
-            でスライド切り替え時にスクリーンリーダーへ通知（WCAG 4.1.3）
+            でスライド切り替え時にスクリーンリーダーへ通知（
+            <a
+              href="https://www.w3.org/WAI/WCAG22/Understanding/status-messages"
+              target="_blank"
+              rel="noopener"
+            >
+              WCAG 4.1.3
+            </a>
+            ）
           </li>
-          <li>自動再生なし（WCAG 2.2.2）・ドラッグ操作なし（WCAG 2.5.7）</li>
+          <li>
+            自動再生なし（
+            <a
+              href="https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide"
+              target="_blank"
+              rel="noopener"
+            >
+              WCAG 2.2.2
+            </a>
+            ）・ドラッグ操作なし（
+            <a
+              href="https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements"
+              target="_blank"
+              rel="noopener"
+            >
+              WCAG 2.5.7
+            </a>
+            ）
+          </li>
           <li>
             前後ボタンのタッチターゲット最小 44×44px、インジケーター最小
-            24×24px（WCAG 2.5.8）
+            24×24px（
+            <a
+              href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum"
+              target="_blank"
+              rel="noopener"
+            >
+              WCAG 2.5.8
+            </a>
+            ）
           </li>
           <li>
             <code>hidden</code>{' '}
             属性で非表示スライドをアクセシビリティツリーから除外
           </li>
-          <li>スライド数は最大6枚を推奨（デジタル庁 DADS ガイドライン）</li>
+          <li>
+            スライド数は最大6枚を推奨（
+            <a
+              href="https://design.digital.go.jp/dads/components/carousel/usage/"
+              target="_blank"
+              rel="noopener"
+            >
+              デジタル庁 DADS ガイドライン
+            </a>
+            ）
+          </li>
         </ul>
       </section>
     </div>

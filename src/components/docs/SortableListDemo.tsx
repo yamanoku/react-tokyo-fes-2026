@@ -44,7 +44,7 @@ const SortableListDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>アクセシビリティのポイント</h2>
+        <h2>実装時のチェックポイント</h2>
         <ul>
           <li>
             <code>role="application"</code>{' '}
@@ -75,7 +75,15 @@ const SortableListDemo = () => {
             スクリーンリーダーが「X項目中Y番目」と読み上げる
           </li>
           <li>
-            マウスドラッグには HTML5 Drag and Drop API を使用。
+            マウスドラッグには
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API"
+              target="_blank"
+              rel="noopener"
+            >
+              Drag and Drop API
+            </a>
+            を使用。
             ドラッグ中は他のアイテムへのキーボードドラッグを無効化して競合を防ぐ
           </li>
         </ul>

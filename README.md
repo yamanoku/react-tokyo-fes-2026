@@ -35,3 +35,4 @@ Reactでアクセシブルなユーザーインターフェースを構築する
 - [ARIA Authoring Practices Guide | APG | WAI | W3C](https://www.w3.org/WAI/ARIA/apg/)
 - [APG Patterns Examples](https://masup9.github.io/apg-patterns-examples/)
 - [Exploring the challenges in creating an accessible sortable list (drag-and-drop) - The GitHub Blog](https://github.blog/engineering/user-experience/exploring-the-challenges-in-creating-an-accessible-sortable-list-drag-and-drop/)
+- [デジタル庁デザインシステムβ版](https://design.digital.go.jp/dads/)

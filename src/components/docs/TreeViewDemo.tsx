@@ -104,7 +104,7 @@ const TreeViewDemo = () => {
       </ComponentDemo>
 
       <section className="mt-12">
-        <h2>アクセシビリティのポイント</h2>
+        <h2>実装時のチェックポイント</h2>
         <ul>
           <li>
             ルートに <code>role="tree"</code>、各項目に{' '}
