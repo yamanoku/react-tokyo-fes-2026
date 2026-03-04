@@ -29,7 +29,7 @@ const SortableListDemo = () => {
         {lastOrder.length > 0 && (
           <output
             aria-label="並び替え後の順序"
-            className="mt-4 p-3 rounded-md border border-component-block bg-accent/5 text-xs font-mono space-y-0.5"
+            className="block mt-4 p-3 rounded-md border border-component-block bg-accent/5 text-xs font-mono space-y-0.5"
           >
             <p className="text-gray-500 dark:text-gray-400 mb-1">
               最後に確定した順序:
