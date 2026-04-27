@@ -45,7 +45,6 @@ html {
 :where(header, main, footer) {
   padding-inline: 0;
   box-sizing: border-box;
-  margin-inline: 0;
 }
 
 /*
